@@ -14,6 +14,20 @@ A dashboard for visualizing and calculating revenue share distribution based on 
 
 ## Quick Start
 
+### Option 1: Deploy to Render (Recommended - Live URL)
+
+1. Fork or upload this repository to GitHub
+2. Go to [Render.com](https://render.com) and sign up
+3. Click "New +" → "Web Service"
+4. Connect your GitHub repository
+5. Configure:
+   - **Build Command:** `pip install -r requirements.txt`
+   - **Start Command:** `python3 server.py`
+6. Deploy and get your live URL (e.g., `https://your-app.onrender.com`)
+7. Share `https://your-app.onrender.com/staking-revenue-dashboard.html` with your team!
+
+### Option 2: Run Locally
+
 1. **Start the server:**
    ```bash
    python3 server.py
