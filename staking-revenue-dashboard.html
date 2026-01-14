@@ -1197,49 +1197,10 @@
             }
         }
 
-        // Fetch snapshot from API
-        async function fetchSnapshot() {
-            const button = document.getElementById('snapshot-button');
-            const errorContainer = document.getElementById('error-container');
-
-            button.disabled = true;
-            button.innerHTML = '⏳ Fetching...';
-            errorContainer.innerHTML = '';
-
-            try {
-                const response = await fetch('/api/fetch-snapshot');
-                const result = await response.json();
-
-                if (result.success) {
-                    // Show success message
-                    errorContainer.innerHTML = `
-                        <div style="background: rgba(16, 185, 129, 0.1); border: 2px solid rgba(16, 185, 129, 0.3); border-radius: 10px; padding: 20px; color: #10b981; margin-bottom: 20px;">
-                            <strong>✅ ${result.message}</strong><br>
-                            Reloading dashboard with updated data...
-                        </div>
-                    `;
-
-                    // Reload the page after a short delay to show the new data
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 1500);
-                } else {
-                    throw new Error(result.error || 'Failed to fetch snapshot');
-                }
-
-            } catch (error) {
-                console.error('Error:', error);
-                errorContainer.innerHTML = `
-                    <div style="background: rgba(239, 68, 68, 0.1); border: 2px solid rgba(239, 68, 68, 0.3); border-radius: 10px; padding: 20px; color: #ef4444; margin-bottom: 20px;">
-                        <strong>❌ Error:</strong> ${error.message}<br>
-                        <small>Make sure the server is running with <code>python3 server.py</code></small>
-                    </div>
-                `;
-                errorContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-                button.disabled = false;
-                button.innerHTML = '📸 Take Snapshot';
-            }
+        // Note: Snapshot functionality disabled for static GitHub Pages deployment
+        // Data is loaded from the included staking-data.json file
+        function fetchSnapshot() {
+            alert('This is a static deployment. To update the data:\n\n1. Run the server locally (python3 server.py)\n2. Click "Take Snapshot" to fetch fresh data\n3. Upload the new staking-data.json to GitHub\n4. GitHub Pages will update automatically');
         }
 
         // Update calculations when revenue input changes
