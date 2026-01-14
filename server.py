@@ -9,9 +9,9 @@ import json
 import os
 from urllib.parse import urlparse
 
-PORT = 8000
+PORT = int(os.environ.get('PORT', 8000))
 API_URL = 'https://mefoundation.com/api/trpc/staking.getStakerSnapshot?input=%7B%22json%22%3A%7B%20%22token%22%3A%20%22MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u%22,%20%22ns%22%3A%20%22acAvyneD7adS3yrXUp41c1AuoYoYRhnjeAWH9stbdTf%22%7D%7D'
-DATA_FILE = '/Users/waynejones/Desktop/staking-data.json'
+DATA_FILE = 'staking-data.json'
 
 class StakingServerHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
@@ -89,13 +89,10 @@ class StakingServerHandler(http.server.SimpleHTTPRequestHandler):
         self.end_headers()
 
 if __name__ == '__main__':
-    # Change to the Desktop directory to serve files from there
-    os.chdir('/Users/waynejones/Desktop')
-
-    with socketserver.TCPServer(("", PORT), StakingServerHandler) as httpd:
-        print(f"🚀 Staking Dashboard Server running at http://localhost:{PORT}/")
-        print(f"📊 Dashboard: http://localhost:{PORT}/staking-revenue-dashboard.html")
-        print(f"📸 Snapshot API: http://localhost:{PORT}/api/fetch-snapshot")
+    with socketserver.TCPServer(("0.0.0.0", PORT), StakingServerHandler) as httpd:
+        print(f"🚀 Staking Dashboard Server running on port {PORT}")
+        print(f"📊 Dashboard: /staking-revenue-dashboard.html")
+        print(f"📸 Snapshot API: /api/fetch-snapshot")
         print("\nPress Ctrl+C to stop the server")
         try:
             httpd.serve_forever()
