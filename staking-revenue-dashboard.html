@@ -51,7 +51,7 @@
             padding: 16px;
             margin-bottom: 20px;
             display: grid;
-            grid-template-columns: 1fr 180px 180px 180px;
+            grid-template-columns: 1fr 140px 140px 140px 140px;
             gap: 12px;
             align-items: end;
         }
@@ -80,6 +80,12 @@
         }
 
         @media (max-width: 1400px) {
+            .controls-section {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 1000px) {
             .controls-section {
                 grid-template-columns: 1fr 1fr;
             }
@@ -466,7 +472,7 @@
         .tier-revenue {
             font-size: 16px;
             font-weight: 700;
-            color: #E42575;
+            color: #10b981;
         }
 
         .tier-revenue-label {
@@ -475,6 +481,18 @@
             margin-top: 3px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .tier-apy {
+            font-size: 14px;
+            font-weight: 700;
+            color: #10b981;
+            margin-top: 4px;
+        }
+
+        .apy-value {
+            color: #10b981;
+            font-weight: 600;
         }
 
         /* Collapsible section */
@@ -614,6 +632,270 @@
             font-weight: 700;
             color: #E42575;
         }
+
+        .cohort-revenue-value.positive {
+            color: #10b981;
+        }
+
+        .cohort-revenue-value.negative {
+            color: #ef4444;
+        }
+
+        .cohort-stat-value.positive {
+            color: #10b981;
+        }
+
+        .cohort-stat-value.negative {
+            color: #ef4444;
+        }
+
+        /* Tab Navigation */
+        .tab-navigation {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+            background: rgba(25, 26, 35, 0.8);
+            border: 1px solid rgba(123, 47, 247, 0.2);
+            border-radius: 8px;
+            padding: 6px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            color: #8B8B93;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background: rgba(123, 47, 247, 0.1);
+            color: #fff;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(90deg, #E42575 0%, #7B2FF7 100%);
+            color: #fff;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+
+        .api-notice {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            color: #fbbf24;
+            font-size: 13px;
+        }
+
+        .api-notice strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Unstaking Timeline Styles */
+        .timeline-header {
+            background: rgba(25, 26, 35, 0.6);
+            border: 1px solid rgba(123, 47, 247, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .timeline-header h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #7B2FF7;
+        }
+
+        .timeline-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .timeline-stat-card {
+            background: rgba(25, 26, 35, 0.8);
+            border: 1px solid rgba(123, 47, 247, 0.2);
+            border-radius: 6px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .timeline-stat-label {
+            font-size: 11px;
+            color: #8B8B93;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-stat-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .chart-container {
+            background: rgba(25, 26, 35, 0.6);
+            border: 1px solid rgba(123, 47, 247, 0.2);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .bar-chart {
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+            align-items: flex-end;
+            min-height: 350px;
+            overflow-x: auto;
+            overflow-y: visible;
+            padding: 30px 10px 80px 10px;
+        }
+
+        .bar-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .bar-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 340px;
+            justify-content: flex-end;
+        }
+
+        .bar-container-vertical {
+            width: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            position: relative;
+        }
+
+        .bar-container-vertical:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .bar-fill-vertical {
+            width: 100%;
+            background: linear-gradient(180deg, #E42575 0%, #7B2FF7 100%);
+            border-radius: 4px 4px 0 0;
+            transition: height 0.3s ease;
+        }
+
+        .bar-fill-vertical.expiring-soon {
+            background: linear-gradient(180deg, #f97316 0%, #ef4444 100%);
+        }
+
+        .bar-fill-vertical.intensity-extreme {
+            background: linear-gradient(180deg, #ff0000 0%, #ff4444 50%, #ffff00 100%);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 255, 0, 0.3);
+            animation: pulse-extreme 1.5s ease-in-out infinite;
+        }
+
+        .bar-fill-vertical.intensity-high {
+            background: linear-gradient(180deg, #ff3366 0%, #ff6699 100%);
+            box-shadow: 0 0 12px rgba(255, 51, 102, 0.5);
+        }
+
+        .bar-fill-vertical.intensity-medium {
+            background: linear-gradient(180deg, #E42575 0%, #7B2FF7 100%);
+        }
+
+        @keyframes pulse-extreme {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 40px rgba(255, 255, 0, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 60px rgba(255, 255, 0, 0.5); }
+        }
+
+        .bar-label-vertical {
+            font-size: 11px;
+            color: #8B8B93;
+            text-align: center;
+            margin-top: 10px;
+            white-space: nowrap;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            height: 60px;
+        }
+
+        .bar-value-vertical {
+            font-size: 10px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 6px;
+            white-space: nowrap;
+        }
+
+        .bar-tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 28, 0.95);
+            border: 1px solid rgba(123, 47, 247, 0.4);
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 11px;
+            white-space: nowrap;
+            z-index: 100;
+            margin-bottom: 8px;
+        }
+
+        .bar-container-vertical:hover .bar-tooltip {
+            display: block;
+        }
+
+        .bar-tooltip-value {
+            color: #E42575;
+            font-weight: 700;
+        }
+
+        .bar-tooltip-stakers {
+            color: #8B8B93;
+            margin-top: 2px;
+        }
+
+        .scale-note {
+            font-size: 11px;
+            color: #8B8B93;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -623,6 +905,15 @@
             <p>Track revenue distribution based on staking power (Monthly snapshot)</p>
         </div>
 
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+            <button class="tab-button active" onclick="switchTab('revenue')">📊 Revenue Share</button>
+            <button class="tab-button" onclick="switchTab('unstaking')">☠️ Unstaking Timeline</button>
+        </div>
+
+        <!-- Revenue Share Tab -->
+        <div id="revenue-tab" class="tab-panel active">
+
         <div class="controls-section">
             <div class="control-group">
                 <label class="control-label">Monthly Net Revenue ($)</label>
@@ -631,7 +922,7 @@
                     id="net-revenue-input"
                     class="control-input"
                     placeholder="Enter monthly net revenue"
-                    value="0"
+                    value="2000000"
                     min="0"
                     step="1000"
                 >
@@ -675,6 +966,18 @@
                     step="1"
                 >
             </div>
+            <div class="control-group">
+                <label class="control-label">$ME Price ($)</label>
+                <input
+                    type="number"
+                    id="me-price"
+                    class="control-input"
+                    placeholder="0.22"
+                    value="0.22"
+                    min="0"
+                    step="0.01"
+                >
+            </div>
         </div>
 
         <div id="error-container"></div>
@@ -713,6 +1016,10 @@
                     <div class="stat-card">
                         <div class="stat-label" id="token-buyback-label">Token Buyback</div>
                         <div class="stat-value highlight" id="token-buyback">$0</div>
+                    </div>
+                    <div class="stat-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                        <div class="stat-label">Avg Staking APY</div>
+                        <div class="stat-value apy-value" id="staking-apy">0.00%</div>
                     </div>
                     <div class="stat-card" style="border-color: rgba(239, 68, 68, 0.3);">
                         <div class="stat-label">Expiring Stake (Feb 2026)</div>
@@ -784,11 +1091,12 @@
                             <th onclick="sortTable('staked')">Amount Staked <span class="sort-indicator" id="sort-staked"></span></th>
                             <th onclick="sortTable('percentage')">% of Total Power <span class="sort-indicator" id="sort-percentage"></span></th>
                             <th onclick="sortTable('revenueShare')">Revenue Share ($) <span class="sort-indicator" id="sort-revenueShare"></span></th>
+                            <th onclick="sortTable('apy')">APY <span class="sort-indicator" id="sort-apy"></span></th>
                         </tr>
                     </thead>
                     <tbody id="stakers-tbody">
                         <tr>
-                            <td colspan="6" class="loading">
+                            <td colspan="7" class="loading">
                                 <div class="loading-spinner"></div>
                                 <div>Loading staking data...</div>
                             </td>
@@ -798,6 +1106,44 @@
             </div>
             </div>
         </div>
+
+        </div> <!-- End Revenue Share Tab -->
+
+        <!-- Unstaking Timeline Tab -->
+        <div id="unstaking-tab" class="tab-panel">
+            <div class="timeline-header">
+                <h2>☠️ Unstaking Timeline</h2>
+                <p>Monthly breakdown of stake expirations over the next 4 years</p>
+            </div>
+
+            <div class="timeline-stats" id="timeline-stats">
+                <div class="timeline-stat-card">
+                    <div class="timeline-stat-label">Expiring Next 3 Months</div>
+                    <div class="timeline-stat-value" id="expiring-3mo">-</div>
+                </div>
+                <div class="timeline-stat-card">
+                    <div class="timeline-stat-label">Expiring Next 12 Months</div>
+                    <div class="timeline-stat-value" id="expiring-12mo">-</div>
+                </div>
+                <div class="timeline-stat-card">
+                    <div class="timeline-stat-label">Peak Expiry Month</div>
+                    <div class="timeline-stat-value" id="peak-month">-</div>
+                </div>
+                <div class="timeline-stat-card">
+                    <div class="timeline-stat-label">Peak Month Amount</div>
+                    <div class="timeline-stat-value" id="peak-amount">-</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Monthly Stake Expirations ($ME)</div>
+                <div class="scale-note">Logarithmic scale - hover for exact values</div>
+                <div class="bar-chart" id="unstaking-chart">
+                    <div style="color: #8B8B93; text-align: center; padding: 40px;">Loading...</div>
+                </div>
+            </div>
+        </div> <!-- End Unstaking Timeline Tab -->
+
     </div>
 
     <script>
@@ -888,12 +1234,18 @@
             const sharePercentage = getRevenueSharePercentage();
             const stakersSplit = parseFloat(document.getElementById('stakers-split').value) || 50;
             const buybackSplit = parseFloat(document.getElementById('buyback-split').value) || 50;
+            const mePrice = parseFloat(document.getElementById('me-price').value) || 0;
 
             const totalToDistribute = netRevenue * (sharePercentage / 100);
             const revenueShare = totalToDistribute * (stakersSplit / 100);
             const tokenBuyback = totalToDistribute * (buybackSplit / 100);
             const stakersPercent = ((sharePercentage * stakersSplit) / 100).toFixed(1);
             const buybackPercent = ((sharePercentage * buybackSplit) / 100).toFixed(1);
+
+            // Calculate single APY (same for all stakers)
+            const annualRevenueShare = revenueShare * 12;
+            const totalStakedValue = stakingData.totalUIStaked * mePrice;
+            const stakingApy = totalStakedValue > 0 ? (annualRevenueShare / totalStakedValue) * 100 : 0;
 
             document.getElementById('total-staking-power').textContent =
                 stakingData.totalUIStakingPower.toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -916,6 +1268,9 @@
 
             document.getElementById('token-buyback').textContent =
                 '$' + tokenBuyback.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+            document.getElementById('staking-apy').textContent =
+                stakingApy.toFixed(2) + '%';
 
             // Update expiring stake info
             if (stakingData.expiring) {
@@ -976,6 +1331,7 @@
             const netRevenue = parseFloat(document.getElementById('net-revenue-input').value) || 0;
             const sharePercentage = getRevenueSharePercentage();
             const stakersSplit = parseFloat(document.getElementById('stakers-split').value) || 50;
+            const mePrice = parseFloat(document.getElementById('me-price').value) || 0;
             const totalToDistribute = netRevenue * (sharePercentage / 100);
             const totalRevenueShare = totalToDistribute * (stakersSplit / 100);
             const cohortGrid = document.getElementById('cohort-grid');
@@ -1001,17 +1357,25 @@
                 );
 
                 const totalSP = stakersInCohort.reduce((sum, staker) => sum + staker.uiStakingPower, 0);
+                const totalStaked = stakersInCohort.reduce((sum, staker) => sum + staker.uiAmount, 0);
                 const percentOfTotal = (totalSP / stakingData.totalUIStakingPower) * 100;
                 const cohortRevenue = (totalSP / stakingData.totalUIStakingPower) * totalRevenueShare;
                 const avgRevenuePerUser = stakersInCohort.length > 0 ? cohortRevenue / stakersInCohort.length : 0;
+
+                // Calculate average APY for cohort
+                const cohortStakedValue = totalStaked * mePrice;
+                const annualRevenue = cohortRevenue * 12;
+                const avgApy = cohortStakedValue > 0 ? (annualRevenue / cohortStakedValue) * 100 : 0;
 
                 return {
                     ...cohort,
                     count: stakersInCohort.length,
                     totalSP,
+                    totalStaked,
                     percentOfTotal,
                     cohortRevenue,
-                    avgRevenuePerUser
+                    avgRevenuePerUser,
+                    avgApy
                 };
             });
 
@@ -1029,13 +1393,13 @@
                             <div class="cohort-stat-value">${cohort.percentOfTotal.toFixed(2)}%</div>
                         </div>
                         <div class="cohort-stat">
-                            <div class="cohort-stat-label">Avg/User</div>
-                            <div class="cohort-stat-value">$${cohort.avgRevenuePerUser.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                            <div class="cohort-stat-label">Avg APY</div>
+                            <div class="cohort-stat-value apy-value">${cohort.avgApy.toFixed(2)}%</div>
                         </div>
                     </div>
                     <div class="cohort-revenue">
                         <div class="cohort-revenue-label">Total Revenue Share</div>
-                        <div class="cohort-revenue-value">$${cohort.cohortRevenue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                        <div class="cohort-revenue-value positive">$${cohort.cohortRevenue.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
                     </div>
                 </div>
             `).join('');
@@ -1066,7 +1430,10 @@
             // Sort stakers
             const netRevenue = parseFloat(document.getElementById('net-revenue-input').value) || 0;
             const sharePercentage = getRevenueSharePercentage();
-            const totalRevenueShare = (netRevenue * (sharePercentage / 100)) / 2;
+            const stakersSplit = parseFloat(document.getElementById('stakers-split').value) || 50;
+            const mePrice = parseFloat(document.getElementById('me-price').value) || 0;
+            const totalToDistribute = netRevenue * (sharePercentage / 100);
+            const totalRevenueShare = totalToDistribute * (stakersSplit / 100);
 
             filtered.sort((a, b) => {
                 let aVal, bVal;
@@ -1092,6 +1459,15 @@
                         aVal = (a.uiStakingPower / stakingData.totalUIStakingPower) * totalRevenueShare;
                         bVal = (b.uiStakingPower / stakingData.totalUIStakingPower) * totalRevenueShare;
                         break;
+                    case 'apy':
+                        // APY = (annualRevenue / stakedValue) * 100
+                        const aShare = (a.uiStakingPower / stakingData.totalUIStakingPower) * totalRevenueShare;
+                        const bShare = (b.uiStakingPower / stakingData.totalUIStakingPower) * totalRevenueShare;
+                        const aStakedValue = a.uiAmount * mePrice;
+                        const bStakedValue = b.uiAmount * mePrice;
+                        aVal = aStakedValue > 0 ? ((aShare * 12) / aStakedValue) * 100 : 0;
+                        bVal = bStakedValue > 0 ? ((bShare * 12) / bStakedValue) * 100 : 0;
+                        break;
                     default:
                         aVal = a.uiStakingPower;
                         bVal = b.uiStakingPower;
@@ -1111,6 +1487,7 @@
             const netRevenue = parseFloat(document.getElementById('net-revenue-input').value) || 0;
             const sharePercentage = getRevenueSharePercentage();
             const stakersSplit = parseFloat(document.getElementById('stakers-split').value) || 50;
+            const mePrice = parseFloat(document.getElementById('me-price').value) || 0;
             const totalToDistribute = netRevenue * (sharePercentage / 100);
             const totalRevenueShare = totalToDistribute * (stakersSplit / 100);
 
@@ -1132,6 +1509,11 @@
                 const individualShare = (staker.uiStakingPower / stakingData.totalUIStakingPower) * totalRevenueShare;
                 const rank = globalIndex + 1;
 
+                // Calculate individual APY based on their actual staked amount
+                const stakedValue = staker.uiAmount * mePrice;
+                const annualRevenue = individualShare * 12;
+                const apy = stakedValue > 0 ? (annualRevenue / stakedValue) * 100 : 0;
+
                 return `
                     <tr>
                         <td><span class="rank ${rank <= 3 ? 'top-3' : ''}">${rank}</span></td>
@@ -1140,6 +1522,7 @@
                         <td>${staker.uiAmount.toLocaleString(undefined, { maximumFractionDigits: 2 })} $ME</td>
                         <td><span class="percentage">${percentage.toFixed(4)}%</span></td>
                         <td>$${individualShare.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                        <td><span class="apy-value">${apy.toFixed(2)}%</span></td>
                     </tr>
                 `;
             }).join('');
@@ -1226,8 +1609,162 @@
             renderTable();
         });
 
+        // Update calculations when $ME price changes
+        document.getElementById('me-price').addEventListener('input', () => {
+            updateStats();
+            renderTable();
+        });
+
+        // ============================================
+        // TAB SWITCHING
+        // ============================================
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update tab panels
+            document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+            document.getElementById(tabName + '-tab').classList.add('active');
+
+            // Update content when switching tabs
+            if (tabName === 'unstaking' && stakingData) {
+                renderUnstakingTimeline();
+            }
+        }
+
+        // ============================================
+        // UNSTAKING TIMELINE
+        // ============================================
+        function renderUnstakingTimeline() {
+            if (!stakingData) return;
+
+            // Get all stakers including expiring ones
+            const allStakers = [...stakingData.stakers];
+            if (stakingData.expiring && stakingData.expiring.stakers) {
+                allStakers.push(...stakingData.expiring.stakers);
+            }
+
+            // Group by month
+            const monthlyData = {};
+            const now = new Date();
+            const currentMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+
+            allStakers.forEach(staker => {
+                const endDate = new Date(staker.endTs * 1000);
+                const monthKey = `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}`;
+
+                if (!monthlyData[monthKey]) {
+                    monthlyData[monthKey] = { amount: 0, stakers: 0, stakingPower: 0 };
+                }
+                monthlyData[monthKey].amount += staker.uiAmount;
+                monthlyData[monthKey].stakers += 1;
+                monthlyData[monthKey].stakingPower += staker.uiStakingPower;
+            });
+
+            // Sort months and calculate stats
+            const sortedMonths = Object.keys(monthlyData).sort();
+            const maxAmount = Math.max(...Object.values(monthlyData).map(m => m.amount));
+
+            // Calculate summary stats
+            let expiring3mo = 0, expiring12mo = 0;
+            let peakMonth = '', peakAmount = 0;
+            const threeMonthsFromNow = new Date(now.getFullYear(), now.getMonth() + 3, 1);
+            const twelveMonthsFromNow = new Date(now.getFullYear(), now.getMonth() + 12, 1);
+
+            sortedMonths.forEach(monthKey => {
+                const [year, month] = monthKey.split('-').map(Number);
+                const monthDate = new Date(year, month - 1, 1);
+                const data = monthlyData[monthKey];
+
+                if (monthDate < threeMonthsFromNow && monthDate >= currentMonth) {
+                    expiring3mo += data.amount;
+                }
+                if (monthDate < twelveMonthsFromNow && monthDate >= currentMonth) {
+                    expiring12mo += data.amount;
+                }
+                if (data.amount > peakAmount) {
+                    peakAmount = data.amount;
+                    peakMonth = monthKey;
+                }
+            });
+
+            // Update stats
+            document.getElementById('expiring-3mo').textContent =
+                expiring3mo.toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' $ME';
+            document.getElementById('expiring-12mo').textContent =
+                expiring12mo.toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' $ME';
+            document.getElementById('peak-month').textContent = peakMonth;
+            document.getElementById('peak-amount').textContent =
+                peakAmount.toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' $ME';
+
+            // Render vertical chart with logarithmic scale
+            const chartContainer = document.getElementById('unstaking-chart');
+            const threeMonthsTs = threeMonthsFromNow.getTime();
+            const chartHeight = 300; // Max bar height in pixels
+
+            // Use logarithmic scale to handle outliers
+            const amounts = Object.values(monthlyData).map(m => m.amount);
+            const minAmount = Math.min(...amounts);
+            const logMax = Math.log10(maxAmount);
+            const logMin = Math.log10(Math.max(minAmount, 1));
+            const logRange = logMax - logMin;
+
+            chartContainer.innerHTML = sortedMonths.map(monthKey => {
+                const data = monthlyData[monthKey];
+                const [year, month] = monthKey.split('-').map(Number);
+                const monthDate = new Date(year, month - 1, 1);
+
+                // Logarithmic scale - peak month gets full height
+                const logValue = Math.log10(Math.max(data.amount, 1));
+                const normalizedHeight = (logValue - logMin) / logRange;
+                const barHeight = Math.max(normalizedHeight * chartHeight, 12);
+
+                const isExpiringSoon = monthDate.getTime() < threeMonthsTs && monthDate >= currentMonth;
+                const monthLabel = monthDate.toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+                const amountFormatted = data.amount >= 1000000
+                    ? (data.amount / 1000000).toFixed(1) + 'M'
+                    : data.amount >= 1000
+                        ? (data.amount / 1000).toFixed(0) + 'K'
+                        : data.amount.toFixed(0);
+
+                // Color intensity based on amount relative to max
+                const ratio = data.amount / maxAmount;
+                let intensityClass = '';
+                if (ratio > 0.8) {
+                    intensityClass = 'intensity-extreme';
+                } else if (ratio > 0.3) {
+                    intensityClass = 'intensity-high';
+                } else {
+                    intensityClass = 'intensity-medium';
+                }
+
+                // Expiring soon takes precedence for near-term months
+                const colorClass = isExpiringSoon ? 'expiring-soon' : intensityClass;
+
+                return `
+                    <div class="bar-column">
+                        <div class="bar-wrapper">
+                            <div class="bar-value-vertical">${amountFormatted}</div>
+                            <div class="bar-container-vertical" style="height: ${barHeight}px;">
+                                <div class="bar-tooltip">
+                                    <div class="bar-tooltip-value">${data.amount.toLocaleString(undefined, { maximumFractionDigits: 0 })} $ME</div>
+                                    <div class="bar-tooltip-stakers">${data.stakers.toLocaleString()} stakers</div>
+                                </div>
+                                <div class="bar-fill-vertical ${colorClass}" style="height: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="bar-label-vertical">${monthLabel}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
         // Load data on page load
-        fetchStakingData();
+        async function init() {
+            await fetchStakingData();
+        }
+        init();
     </script>
 </body>
 </html>
